@@ -14,10 +14,11 @@ body {
 }
 .container {
 
-min-width: 250px;
-max-width:300px;
+width:300px;
 background: #fff;
-border-radius: 0px 0px 5px 5px;
+border-radius: 5px 5px 5px 5px;
+border :1px solid red;
+padding-bottom: 10px;
  
  
 }
@@ -33,11 +34,12 @@ border-radius: 0px 0px 5px 5px;
 
 }
 .buttons {
-  display: grid;
-  grid-gap: 5px;
-  grid-template-columns: repeat(4,1fr);
-  padding: 20px;
   
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px; 
+    padding: 20px 0px 0 20px;
+   
 
 }
 .buttons button {
@@ -58,4 +60,25 @@ border-radius: 0px 0px 5px 5px;
   color: #0a6cc3e9;
 
 }
+
+@media (min-width: 250px) and (max-width: 380px) {
+  .container {
+    max-width: 100%; 
+    border-radius: 0px;
+    padding: 10 0px;
+  }
+  .screen {
+    height: 70px; 
+    font-size: 20px; 
+    border-radius: 0px;
+  }
+  .buttons button {
+    width: 40px; 
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+
+
 
