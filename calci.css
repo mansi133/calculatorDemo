@@ -9,16 +9,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   background: #e0e3eb;
 }
 .container {
-  position: relative;
-  max-width: 300px;
-  min-width: 260px;
-  border-radius: 20px;
-  padding: 0;
+ 
+  width: 300px;
+  padding: 0px;
   background: #fff;
   border-radius: 0px 0px 5px 5px;
+
   
 }
 .screen {
@@ -27,8 +27,7 @@ body {
   border: none;
   text-align: right;
   font-size: 30px;
- 
-  color: white;
+  color: rgb(246, 246, 248);
   border-radius: 5px 5px 0px 0px;
   background-color: rgba(221, 9, 9, 0.867);
  
@@ -36,8 +35,7 @@ body {
 .buttons {
   display: grid;
   grid-gap: 5px;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(4,1fr);
   padding: 20px;
 
 }
@@ -51,6 +49,7 @@ body {
   font-weight: bold;
   font-size: 20px;
   background-color: #eeeeeede;
+  cursor: pointer;
 }
 
 .opt {
