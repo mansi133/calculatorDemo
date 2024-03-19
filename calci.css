@@ -13,6 +13,7 @@ body {
   background: #e0e3eb;
 }
 .container {
+overflow: scroll;
  
   width: 300px;
   padding: 0px;
