@@ -14,10 +14,9 @@ body {
 }
 .container {
 overflow: scroll;
- 
-  width: 270px;
-  padding: 0px;
-  background: #fff;
+min-width: 250px;
+max-width:300px;
+background: #fff;
   border-radius: 0px 0px 5px 5px;
 
   
