@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="container">
-    <input type="text" class="screen"  readonly/>
+    <input type="text" class="screen" readonly />
     <div class="buttons">
       <button class="opt" data-value="AC">AC</button>
       <button class="opt" data-value="DEL">DEL</button>
@@ -38,63 +38,65 @@
 
     let screenvalue = "";
     let currentopt = "";
-  
-  function calculate() {
-  const splitvalue = screenvalue.split(currentopt);
-  let  result = parseInt(splitvalue[0]); 
-  for (let i = 1; i < splitvalue.length; i++) {
-    const operand = parseInt(splitvalue[i]);
-    switch (currentopt) {
-      case "+":
-        result += operand;
-        break;
-      case "-":
-        result -= operand;
-        break;
-      case "*":
-        result *= operand;
-        break;
-      case "/":
-        result /= operand;
-        break;
-      case "%":
-        result %= operand;
-        break;
+
+    function calculate() {
+      const splitvalue = screenvalue.split(currentopt);
+      console.log(splitvalue);
+      let result = parseFloat(splitvalue[0]);
+      for (let i = 1; i < splitvalue.length; i++) {
+        const operand = parseFloat(splitvalue[i]);
+        switch (currentopt) {
+          case "+":
+            result += operand;
+            break;
+          case "-":
+            result -= operand;
+            break;
+          case "*":
+            result *= operand;
+            break;
+          case "/":
+            result /= operand;
+            break;
+          case "%":
+            result %= operand;
+            break;
+        }
+      }
+      return result;
     }
-  }
-  return result;
-}
+
     buttons.forEach(button => {
       button.addEventListener('click', function () {
         const value = this.dataset.value;
-        console.log("Clicked value:", value); 
+        console.log("Clicked value:", value);
 
-        if (value === "+" || value === "-" || value === "*" || value === "/" || value === "%") {
-          screenvalue += value;
-          console.log("screenval:",screenvalue);
-           currentopt = value;
-    } 
-          else {
-          switch (value) {
-            case "AC":
-              screenvalue = "";
-              break;
-            case "=":
-              screenvalue = calculate();
-              
-              break;
-            case "DEL":
-              screenvalue = screenvalue.slice(0, -1);
-              break;
-            default:
-              screenvalue = screenvalue + value;
-          }
+        switch (value) {
+          case "+":
+          case "-":
+          case "*":
+          case "/":
+          case "%":
+            screenvalue += value;
+            console.log("screenval:", screenvalue);
+            currentopt = value;
+            break;
+          case "AC":
+            screenvalue = "";
+            break;
+          case "=":
+            screenvalue = calculate();
+            break;
+          case "DEL":
+            screenvalue = screenvalue.slice(0, -1);
+            break;
+          default:
+            screenvalue = screenvalue + value;
         }
+
         screen.value = screenvalue;
       });
     });
   </script>
-     
-       
 </body>
 </html>
